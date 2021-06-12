@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 20px;
+    background: linear-gradient(90deg, #3C3B3F, #605C3C);
+}
+
+h1 {
+    text-align: center;
+    color: brown;
+}
+
+form {
+    width: 400px;
+    margin: 3rem auto;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    margin: .8rem 0;
+}
+
+input {
+    width: 400px;
+    border: 2px solid brown;
+    padding: .4rem;
+}
+
+.fas {
+    background: brown;
+    padding: .5rem;
+    font-size: 1.1rem;
+}
+
+.fa-user-circle {
+    font-size: 1rem;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit {
+    background: transparent;
+    width: 400px;
+    padding: .3rem;
+    cursor: pointer;
+    opacity: .5;
+    border: 2px solid darkgreen;
+    transition: .8s background;
+}
+.submit:hover {
+    background: darkgreen;
+    opacity: 1;
+}
+
+
+/* DOM JS Section */
+
+.contain-courses {
+    display: flex;
+    width: 450px;
+    height: auto;
+    margin: 0 auto;
+    background: red;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card {
+    background: #fff;
+    border-radius: 3px;
+    margin: .4rem;
+}
+.imgs {
+    width: 200px;
+    object-fit: contain;
+}
+.title {
+    margin: .6rem 0;
+    padding: 0 0 0 .8rem;
+    font-size: 1.2rem;
+}
