@@ -10,10 +10,10 @@ formValues.addEventListener("click", submitValues);
 
 // Functions
 const courses = () => {
-    const customer = customerInput.value;
-    const course = courseInput.value;
-    const author = authorInput.value;
-    
+    const person = (customer, course, author) => { // FACTORY FUNCTION
+        return {customer, course, author}
+    }
+    const customerInfo = person(`${customerInput.value}`, `${courseInput.value}`, `${authorInput.value}`)
     const formulate = () => {
         const div = document.createElement("div");
         document.querySelector(".contain-courses").appendChild(div)
@@ -22,29 +22,32 @@ const courses = () => {
         const p1 = document.createElement("p");
         const p2 = document.createElement("p");
         const p3 = document.createElement("p");
-
+        const health = 3
+        console.log("Test")
         div.appendChild(img);
         img.className = "imgs"
         img.src = "https://js-beginners.github.io/course-form-oop-project/img/cust-0.jpg" // Add an array for these images
         div.appendChild(p1)
         p1.className = "name title"
-        p1.innerText = `Name: ${customer}`;
+        p1.innerText = `Name: ${customerInfo.customer}`;
         div.appendChild(p2)
         p2.className = "program title"
-        p2.innerText = `Course: ${course}`;
+        p2.innerText = `Course: ${customerInfo.course}`;
         div.appendChild(p3)
         p3.className = "writer title"
-        p3.innerText = `Author: ${author}`;
+        p3.innerText = `Author: ${customerInfo.author}`;
+
+        
     }
-    return {formulate}  
+    return {formulate, customerInfo, courses}  
 }
 
 function submitValues(item) {
-    let addInto = courses();
+    const addInto = courses();
     item.preventDefault();
 
-    console.log(item);
-    if (!(customerInput.value && courseInput.value && authorInput.value)) {
+    console.log(courses.formulate)
+    if (!(customerInput.value, courseInput.value, authorInput.value)) {
         return
     } else {
         addInto.formulate()
@@ -54,20 +57,6 @@ function submitValues(item) {
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
